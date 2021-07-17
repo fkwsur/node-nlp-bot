@@ -1,0 +1,601 @@
+{
+  "settings": {
+    "languages": [
+      "en",
+      "ko"
+    ],
+    "forceNER": true,
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en",
+      "ko"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "for,goodby,now": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "bye,care,take": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "later,okay,see,you": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "bye,for,now": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "go,i,must": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "hello": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "hi": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "howdi": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "greetings.bye": "default",
+          "greetings.hello": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "goodbye for now",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "bye bye take care",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "okay see you later",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "bye for now",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "i must go",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "hello",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "hi",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "howdy",
+            "intent": "greetings.hello"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "goodby": 1,
+              "for": 1,
+              "now": 1,
+              "bye": 1,
+              "take": 1,
+              "care": 1,
+              "okay": 1,
+              "see": 1,
+              "you": 1,
+              "later": 1,
+              "i": 1,
+              "must": 1,
+              "go": 1,
+              "hello": 1,
+              "hi": 1,
+              "howdi": 1
+            },
+            "intents": {
+              "greetings.bye": 1,
+              "greetings.hello": 1
+            },
+            "intentFeatures": {
+              "greetings.bye": {
+                "goodby": 1,
+                "for": 1,
+                "now": 1,
+                "bye": 1,
+                "take": 1,
+                "care": 1,
+                "okay": 1,
+                "see": 1,
+                "you": 1,
+                "later": 1,
+                "i": 1,
+                "must": 1,
+                "go": 1
+              },
+              "greetings.hello": {
+                "hello": 1,
+                "hi": 1,
+                "howdi": 1
+              }
+            },
+            "featuresToIntent": {
+              "goodby": [
+                "greetings.bye"
+              ],
+              "for": [
+                "greetings.bye"
+              ],
+              "now": [
+                "greetings.bye"
+              ],
+              "bye": [
+                "greetings.bye"
+              ],
+              "take": [
+                "greetings.bye"
+              ],
+              "care": [
+                "greetings.bye"
+              ],
+              "okay": [
+                "greetings.bye"
+              ],
+              "see": [
+                "greetings.bye"
+              ],
+              "you": [
+                "greetings.bye"
+              ],
+              "later": [
+                "greetings.bye"
+              ],
+              "i": [
+                "greetings.bye"
+              ],
+              "must": [
+                "greetings.bye"
+              ],
+              "go": [
+                "greetings.bye"
+              ],
+              "hello": [
+                "greetings.hello"
+              ],
+              "hi": [
+                "greetings.hello"
+              ],
+              "howdi": [
+                "greetings.hello"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "goodby",
+                "for",
+                "now",
+                "bye",
+                "take",
+                "care",
+                "okay",
+                "see",
+                "you",
+                "later",
+                "i",
+                "must",
+                "go",
+                "hello",
+                "hi",
+                "howdi"
+              ],
+              "intents": [
+                "greetings.bye",
+                "greetings.hello"
+              ],
+              "perceptrons": [
+                [
+                  3.547337532043457,
+                  3.835749387741089,
+                  3.835749387741089,
+                  3.9585132598876953,
+                  3.6766104698181152,
+                  3.6766104698181152,
+                  2.8525924682617188,
+                  2.8525924682617188,
+                  2.8525924682617188,
+                  2.8525924682617188,
+                  3.805833339691162,
+                  3.805833339691162,
+                  3.805833339691162,
+                  -2.83388614654541,
+                  -2.817099094390869,
+                  -2.7995951175689697,
+                  2.85592960855999
+                ],
+                [
+                  -1.8950731754302979,
+                  -2.457380771636963,
+                  -2.457380771636963,
+                  -2.644037961959839,
+                  -2.081730604171753,
+                  -2.081730604171753,
+                  -1.7042158842086792,
+                  -1.7042158842086792,
+                  -1.7042158842086792,
+                  -1.7042158842086792,
+                  -2.267854690551758,
+                  -2.267854690551758,
+                  -2.267854690551758,
+                  7.381767749786377,
+                  7.414748668670654,
+                  7.374270915985107,
+                  6.835164150442489
+                ]
+              ]
+            }
+          }
+        }
+      },
+      "ko": {
+        "settings": {
+          "locale": "ko",
+          "trainByDomain": false,
+          "tag": "domain-manager-ko",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "시커메지,아롱지": {
+            "intent": "메롱이.메롱",
+            "domain": "default"
+          },
+          "똥개": {
+            "intent": "똥개.똥",
+            "domain": "default"
+          },
+          "작용시키,퍼서석대": {
+            "intent": "재용.서",
+            "domain": "default"
+          },
+          "작용시키,재잘대": {
+            "intent": "재용.서",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "메롱이.메롱": "default",
+          "똥개.똥": "default",
+          "재용.서": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "메롱",
+            "intent": "메롱이.메롱"
+          },
+          {
+            "domain": "default",
+            "utterance": "똥개",
+            "intent": "똥개.똥"
+          },
+          {
+            "domain": "default",
+            "utterance": "서재용",
+            "intent": "재용.서"
+          },
+          {
+            "domain": "default",
+            "utterance": "재용",
+            "intent": "재용.서"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "ko",
+              "tag": "nlu-ko",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "시커메지": 1,
+              "아롱지": 1,
+              "똥개": 1,
+              "퍼서석대": 1,
+              "작용시키": 1,
+              "재잘대": 1
+            },
+            "intents": {
+              "메롱이.메롱": 1,
+              "똥개.똥": 1,
+              "재용.서": 1
+            },
+            "intentFeatures": {
+              "메롱이.메롱": {
+                "시커메지": 1,
+                "아롱지": 1
+              },
+              "똥개.똥": {
+                "똥개": 1
+              },
+              "재용.서": {
+                "퍼서석대": 1,
+                "작용시키": 1,
+                "재잘대": 1
+              }
+            },
+            "featuresToIntent": {
+              "시커메지": [
+                "메롱이.메롱"
+              ],
+              "아롱지": [
+                "메롱이.메롱"
+              ],
+              "똥개": [
+                "똥개.똥"
+              ],
+              "퍼서석대": [
+                "재용.서"
+              ],
+              "작용시키": [
+                "재용.서"
+              ],
+              "재잘대": [
+                "재용.서"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "ko",
+                "tag": "nlu-ko",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "시커메지",
+                "아롱지",
+                "똥개",
+                "퍼서석대",
+                "작용시키",
+                "재잘대"
+              ],
+              "intents": [
+                "메롱이.메롱",
+                "똥개.똥",
+                "재용.서"
+              ],
+              "perceptrons": [
+                [
+                  6.278843879699707,
+                  6.278843879699707,
+                  -1.657247543334961,
+                  -0.6128944158554077,
+                  -1.199765682220459,
+                  -0.5813616514205933,
+                  1.7085677843760303
+                ],
+                [
+                  -1.6560859680175781,
+                  -1.6560859680175781,
+                  10.647748947143555,
+                  -1.1301430463790894,
+                  -2.241105079650879,
+                  -1.107846975326538,
+                  3.383551489686721
+                ],
+                [
+                  -1.2120634317398071,
+                  -1.2120634317398071,
+                  -2.2184479236602783,
+                  3.9911532402038574,
+                  8.000101089477539,
+                  4.007497310638428,
+                  2.2778930050191115
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "goodbye for now"
+      ],
+      [
+        "en",
+        "bye bye take care"
+      ],
+      [
+        "en",
+        "okay see you later"
+      ],
+      [
+        "en",
+        "bye for now"
+      ],
+      [
+        "en",
+        "i must go"
+      ],
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "howdy"
+      ],
+      [
+        "ko",
+        "메롱"
+      ],
+      [
+        "ko",
+        "똥개"
+      ],
+      [
+        "ko",
+        "서재용"
+      ],
+      [
+        "ko",
+        "재용"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "greetings.bye": [
+          {
+            "answer": "Till next time"
+          },
+          {
+            "answer": "see you soon!"
+          }
+        ],
+        "greetings.hello": [
+          {
+            "answer": "Hey there!"
+          },
+          {
+            "answer": "Greetings!"
+          }
+        ]
+      },
+      "ko": {
+        "메롱이.메롱": [
+          {
+            "answer": "바보해삼멍개말미장"
+          }
+        ],
+        "똥개.똥": [
+          {
+            "answer": "개똥아똥쌋니아니요"
+          }
+        ],
+        "재용.서": [
+          {
+            "answer": "안졸려요"
+          },
+          {
+            "answer": "안잘거에요"
+          },
+          {
+            "answer": "멀쩡해요"
+          },
+          {
+            "answer": "깨어있어요"
+          },
+          {
+            "answer": "zZ"
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}
